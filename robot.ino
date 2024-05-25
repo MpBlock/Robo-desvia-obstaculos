@@ -1,7 +1,7 @@
-#include <Servo.h>          //standard library for the servo
-#include <NewPing.h>        //for the Ultrasonic sensor function library.
+#include <Servo.h>          
+#include <NewPing.h>        
 
-//L298N motor control pins
+//L298N
 const int LeftMotorForward = 4;
 const int LeftMotorBackward = 5;
 const int RightMotorForward = 2;
@@ -9,9 +9,9 @@ const int RightMotorBackward = 7;
 const int enA = 3;
 const int enB = 6;
 
-//sensor pins
-#define trig_pin 10 //
-#define echo_pin 11 //
+//HC-SR04
+#define trig_pin 10 
+#define echo_pin 11 
 
 #define maximum_distance 200
 boolean goesForward = false;
@@ -29,7 +29,7 @@ void setup(){
   pinMode(enA, OUTPUT);
   pinMode(enB, OUTPUT); 
   
-  servo_motor.attach(9); //our servo pin
+  servo_motor.attach(9); 
 
   servo_motor.write(115);
   delay(1000);
@@ -164,9 +164,7 @@ void turnRight(){
   digitalWrite(LeftMotorBackward, LOW);
   digitalWrite(RightMotorBackward, LOW);
   digitalWrite(enA,HIGH);
-  digitalWrite(enB,HIGH);
- 
-  
+  digitalWrite(enB,HIGH);  
   
 }
 
